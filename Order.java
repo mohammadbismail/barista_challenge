@@ -3,16 +3,19 @@ import java.util.ArrayList;
 public class Order {
     private String name;
     private boolean ready;
-    private ArrayList<Object> items = new ArrayList<Object>();
+    private ArrayList<Item> items;
 
     // Constructors
     public Order() {
         this.name = "Guest";
-        this.items = new ArrayList<Object>();
+        this.items = new ArrayList<Item>();
+        this.ready = setReady();
     }
 
     public Order(String myName) {
         this.name = myName;
+        this.items = new ArrayList<Item>();
+        this.ready = setReady();
     }
 
     // Methods
@@ -29,9 +32,22 @@ public class Order {
     }
 
     public void display() {
-        System.out.printf(this.name);
-        for (int i = 0 ; i < items.size(); i++){
-            System.out.printf(item.name - )
+        System.out.println(this.name);
+        for (Item item : this.items) {
+            System.out.println(item.getName() + " - " + item.getPrice());
         }
+        System.out.println("Total price is:" + this.getOrderTotal());
+    }
+
+    public double getOrderTotal() {
+        double sum = 0;
+        for (Item item : this.items) {
+            sum += item.getPrice();
+        }
+        return sum;
+    }
+
+    public boolean setReady() {
+        return this.ready = true;
     }
 }
