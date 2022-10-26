@@ -19,6 +19,7 @@ public class TestOrders {
         order3.addItem(item4);
         order2.addItem(item1);
         // order3.display();
-        order3.getStatusMessage();
+        order3.setReady();
+        order2.getStatusMessage();
     }
 }

@@ -9,13 +9,11 @@ public class Order {
     public Order() {
         this.name = "Guest";
         this.items = new ArrayList<Item>();
-        this.ready = setReady();
     }
 
     public Order(String myName) {
         this.name = myName;
         this.items = new ArrayList<Item>();
-        this.ready = setReady();
     }
 
     // Methods
@@ -23,11 +21,11 @@ public class Order {
         this.items.add(myItem);
     }
 
-    public String getStatusMessage() {
+    public void getStatusMessage() {
         if (this.ready == true) {
-            return "Your order is ready!";
+            System.out.println("Your order is ready!");
         } else {
-            return "Thank you for waiting, your order will be ready soon!";
+            System.out.println("Thank you for waiting, your order will be ready soon!");
         }
     }
 
@@ -47,7 +45,7 @@ public class Order {
         return sum;
     }
 
-    public boolean setReady() {
-        return this.ready = true;
+    public void setReady() {
+        this.ready = true;
     }
 }
